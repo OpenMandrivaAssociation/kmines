@@ -1,12 +1,12 @@
 Name:		kmines
-Version:	4.14.3
-Release:	2
+Version:	14.12.0
+Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://games.kde.org/game.php?game=kmines
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 
 %description
