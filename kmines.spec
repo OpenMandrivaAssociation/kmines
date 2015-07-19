@@ -34,7 +34,7 @@ without blowing up any mines. When a mine is blown up, the game is over.
 %{_bindir}/kmines                                                                                      
 %{_datadir}/applications/org.kde.kmines.desktop                                                                                                                                        
 %{_sysconfdir}/xdg/kmines.knsrc  
-%{_datadir}/knotifications5/kmines.notifyrc
+%{_datarootdir}/knotifications5/kmines.notifyrc
 %doc %{_docdir}/*/*/kmines   
 %{_datadir}/kxmlgui5/kmines/kminesui.rc
 %{_iconsdir}/hicolor/*/apps/kmines.pn
