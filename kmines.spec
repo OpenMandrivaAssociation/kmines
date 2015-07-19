@@ -6,91 +6,48 @@ Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://games.kde.org/game.php?game=kmines
-Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Qml)
+BuildRequires:	cmake(KF5KDEGames)
+BuildRequires:  cmake(KF5CoreAddons)                                                                   
+BuildRequires:  cmake(KF5Config)                                                                       
+BuildRequires:  cmake(KF5WidgetsAddons)                                                                
+BuildRequires:  cmake(KF5Config)                                                                       
+BuildRequires:  cmake(KF5DBusAddons)                                                                   
+BuildRequires:  cmake(KF5I18n)                                                                         
+BuildRequires:  cmake(KF5ConfigWidgets)                                                                
+BuildRequires:  cmake(KF5TextWidgets)                                                                  
+BuildRequires:  cmake(KF5XmlGui)                                                                       
+BuildRequires:  cmake(KF5KIO)                                                                          
+BuildRequires:  cmake(KF5NotifyConfig)  
+
 
 %description
 KMines is a classic Minesweeper game. The idea is to uncover all the squares
 without blowing up any mines. When a mine is blown up, the game is over.
 
 %files
-%{_kde_bindir}/kmines
-%{_kde_applicationsdir}/kmines.desktop
-%{_kde_appsdir}/kmines
-%{_kde_configdir}/kmines.knsrc
-%{_kde_docdir}/*/*/kmines
-%{_kde_iconsdir}/hicolor/*/apps/kmines.png
+%{_bindir}/kmines                                                                                      
+%{_datadir}/applications/org.kde.kmines.desktop                                                                                                                                        
+%{_sysconfdir}/xdg/kmines.knsrc  
+%{_datadir}/knotifications5/kmines.notifyrc
+%doc %{_docdir}/*/*/kmines   
+%{_datadir}/kxmlgui5/kmines/kminesui.rc
+%{_iconsdir}/hicolor/*/apps/kmines.pn
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
-- New version 4.14.1
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- New version 4.13.2
-
-* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
-- New version 4.12.4
-
-* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
-- New version 4.12.3
-
-* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
-- New version 4.12.2
-
-* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
-- New version 4.12.1
-
-* Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
-- New version 4.11.4
-
-* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
-- New version 4.11.3
-
-* Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
-- New version 4.11.2
-
-* Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.1-1
-- New version 4.11.1
-
-* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
-- New version 4.11.0
-
-* Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
-- New version 4.10.5
-
-* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
-- New version 4.10.4
-
-* Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
-- New version 4.10.3
-
-* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
-- New version 4.10.2
-
-* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
-- New version 4.10.1
-
-* Wed Feb 13 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
-- Split from kdegames4 package
+%ninja_install -C build
 
