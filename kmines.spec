@@ -1,6 +1,6 @@
 Name:		kmines
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
@@ -32,12 +32,13 @@ without blowing up any mines. When a mine is blown up, the game is over.
 
 %files
 %{_bindir}/kmines                                                                                      
-%{_datadir}/applications/org.kde.kmines.desktop                                                                                                                                        
+%{_datadir}/applications/org.kde.kmines.desktop
 %{_sysconfdir}/xdg/kmines.knsrc  
 %{_datarootdir}/knotifications5/kmines.notifyrc
-%doc %{_docdir}/*/*/kmines   
 %{_datadir}/kxmlgui5/kmines/kminesui.rc
-%{_iconsdir}/hicolor/*/apps/kmines.pn
+%{_iconsdir}/hicolor/*/apps/kmines.png
+%{_datadir}/kmines
+%doc %{_docdir}/*/*/kmines
 
 #------------------------------------------------------------------------------
 
