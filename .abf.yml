@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kmines-15.08.0.tar.xz: 66b6061c1582070294e3fa90601cd1f76d63a41e
+sources:
+  kmines-15.08.1.tar.xz: d9f6ca5b8d2979ae19d341a053900555ff598fec
