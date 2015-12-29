@@ -1,6 +1,6 @@
 Name:		kmines
 Version:	15.12.0
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
