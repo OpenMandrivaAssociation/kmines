@@ -13,17 +13,18 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Qml)
 BuildRequires:	cmake(KF5KDEGames)
-BuildRequires:  cmake(KF5CoreAddons)                                                                   
-BuildRequires:  cmake(KF5Config)                                                                       
-BuildRequires:  cmake(KF5WidgetsAddons)                                                                
-BuildRequires:  cmake(KF5Config)                                                                       
-BuildRequires:  cmake(KF5DBusAddons)                                                                   
-BuildRequires:  cmake(KF5I18n)                                                                         
-BuildRequires:  cmake(KF5ConfigWidgets)                                                                
-BuildRequires:  cmake(KF5TextWidgets)                                                                  
-BuildRequires:  cmake(KF5XmlGui)                                                                       
-BuildRequires:  cmake(KF5KIO)                                                                          
-BuildRequires:  cmake(KF5NotifyConfig)  
+BuildRequires:  cmake(KF5CoreAddons)
+BuildRequires:  cmake(KF5Config)
+BuildRequires:  cmake(KF5DocTools)
+BuildRequires:  cmake(KF5WidgetsAddons)
+BuildRequires:  cmake(KF5Config)
+BuildRequires:  cmake(KF5DBusAddons)
+BuildRequires:  cmake(KF5I18n)
+BuildRequires:  cmake(KF5ConfigWidgets)
+BuildRequires:  cmake(KF5TextWidgets)
+BuildRequires:  cmake(KF5XmlGui)
+BuildRequires:  cmake(KF5KIO)
+BuildRequires:  cmake(KF5NotifyConfig)
 
 
 %description
@@ -31,9 +32,9 @@ KMines is a classic Minesweeper game. The idea is to uncover all the squares
 without blowing up any mines. When a mine is blown up, the game is over.
 
 %files
-%{_bindir}/kmines                                                                                      
+%{_bindir}/kmines
 %{_datadir}/applications/org.kde.kmines.desktop
-%{_sysconfdir}/xdg/kmines.knsrc  
+%{_sysconfdir}/xdg/kmines.knsrc
 %{_datarootdir}/knotifications5/kmines.notifyrc
 %{_datadir}/kxmlgui5/kmines/kminesui.rc
 %{_iconsdir}/hicolor/*/apps/kmines.png
