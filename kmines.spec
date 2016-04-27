@@ -1,5 +1,5 @@
 Name:		kmines
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
