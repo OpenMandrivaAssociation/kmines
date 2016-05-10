@@ -25,6 +25,7 @@ BuildRequires:  cmake(KF5TextWidgets)
 BuildRequires:  cmake(KF5XmlGui)
 BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5NotifyConfig)
+BuildRequires:	cmake(KF5Crash)
 
 
 %description
