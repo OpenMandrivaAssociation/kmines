@@ -1,5 +1,5 @@
 Name:		kmines
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
@@ -32,15 +32,14 @@ BuildRequires:	cmake(KF5Crash)
 KMines is a classic Minesweeper game. The idea is to uncover all the squares
 without blowing up any mines. When a mine is blown up, the game is over.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/kmines
 %{_datadir}/applications/org.kde.kmines.desktop
-%{_sysconfdir}/xdg/kmines.knsrc
-%{_datarootdir}/knotifications5/kmines.notifyrc
+%{_datadir}/knotifications5/kmines.notifyrc
 %{_datadir}/kxmlgui5/kmines/kminesui.rc
 %{_iconsdir}/hicolor/*/apps/kmines.png
 %{_datadir}/kmines
-%doc %{_docdir}/*/*/kmines
+%{_datadir}/metainfo/*.xml
 
 #------------------------------------------------------------------------------
 
@@ -53,4 +52,4 @@ without blowing up any mines. When a mine is blown up, the game is over.
 
 %install
 %ninja_install -C build
-
+%find_lang %{name} --with-html
