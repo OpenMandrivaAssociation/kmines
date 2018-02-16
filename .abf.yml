@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kmines-17.12.1.tar.xz: 7049335d6e1a16ec291b30f87058aab5c3fa3802
+sources:
+  kmines-17.12.2.tar.xz: c84384a14fcfb30d471b8b59d5fb4a5f195d30fc
