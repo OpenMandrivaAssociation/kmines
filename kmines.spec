@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Name:		kmines
-Version:	19.12.3
+Version:	20.03.80
 Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
@@ -40,6 +40,7 @@ without blowing up any mines. When a mine is blown up, the game is over.
 %{_iconsdir}/hicolor/*/apps/kmines.png
 %{_datadir}/kmines
 %{_datadir}/metainfo/*.xml
+%{_datadir}/qlogging-categories5/kmines.categories
 
 #------------------------------------------------------------------------------
 
