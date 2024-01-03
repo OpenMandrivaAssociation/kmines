@@ -2,7 +2,7 @@
 
 Name:		kmines
 Version:	23.08.4
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
