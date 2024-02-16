@@ -1,8 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Name:		kmines
-Version:	23.08.4
-Release:	2
+Version:	23.08.5
+Release:	1
 Epoch:		1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
