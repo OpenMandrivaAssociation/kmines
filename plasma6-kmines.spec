@@ -9,7 +9,7 @@ Release:	%{?git:0.%{git}.}1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://games.kde.org/game.php?game=kmines
+URL:		https://games.kde.org/game.php?game=kmines
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/kmines/-/archive/%{gitbranch}/kmines-%{gitbranchd}.tar.bz2#/kmines-%{git}.tar.bz2
 %else
