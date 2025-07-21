@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Name:		kmines
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	The classic mine sweeper
 Group:		Graphical desktop/KDE
@@ -35,12 +35,16 @@ BuildRequires:  cmake(KF6KIO)
 BuildRequires:  cmake(KF6NotifyConfig)
 BuildRequires:	cmake(KF6Crash)
 
+%rename plasma6-kmines
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KMines is a classic Minesweeper game. The idea is to uncover all the squares
 without blowing up any mines. When a mine is blown up, the game is over.
 
-%files -f kmines.lang
+%files -f %{name}.lang
 %{_bindir}/kmines
 %{_datadir}/applications/org.kde.kmines.desktop
 %{_iconsdir}/hicolor/*/apps/kmines.png
@@ -48,18 +52,3 @@ without blowing up any mines. When a mine is blown up, the game is over.
 %{_datadir}/metainfo/*.xml
 %{_datadir}/qlogging-categories6/kmines.categories
 %{_datadir}/qlogging-categories6/kmines.renamecategories
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kmines-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kmines --with-html
