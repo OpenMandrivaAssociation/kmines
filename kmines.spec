@@ -15,7 +15,6 @@ Source0:	https://invent.kde.org/games/kmines/-/archive/%{gitbranch}/kmines-%{git
 %else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kmines-%{version}.tar.xz
 %endif
-BuildRequires:	libkdegames-devel
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Test)
